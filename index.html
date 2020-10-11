@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sujeedo's portfolio site</title> <!--메타정보는 이름과 컨텐을 이용해 다양한 정보를 담을 수 있습니다.-->
+  <meta name="description" content="portfolio"> <!--description 웹 사이트 설명-->
+  <meta name="author" content="sujeedo"> <!--author 웹 사이트 저작자 설명-->
+  <link rel="icon" type="image/png" href="images/favicon.png"> <!--웹사이트 대표 로고 지정-->
+  <script src="https://kit.fontawesome.com/dc4c876557.js" crossorigin="anonymous"></script> <!--폰트 아이콘 연동-->
+  <link rel="stylesheet" href="assets/fontello-e3511356/css/fontello-embedded.css"> <!--셀프 폰트 아이콘 연동-->
+  <link rel="stylesheet" href="assets/fontello-e3511356/css/animation.css"> <!--셀프 폰트 아이콘 애니메이션 연동-->
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=Racing+Sans+One&display=swap" rel="stylesheet"> <!--구글 폰트 연동-->
+  <link rel="stylesheet" href="assets/style.css"> <!--CSS 파일 연동-->
+  <script src="assets/main.js" defer></script> <!--defer : html파일이 모두 로딩된 후 자바스크립트를 실행하도록 해줍니다.-->
+</head>
+<body>
+
+  <!--Navbar-->
+  <nav id="navbar">
+    <div class="navbar__logo">
+      <i class="fab fa-fort-awesome-alt"></i>
+      <a href="#">sujeedo</a>
+    </div>
+    <div class="navbar__menu__container">
+      <ul class="navbar__menu">
+        <li class="navbar__menu__itme active" data-link="#home" >Home</li>
+        <li class="navbar__menu__itme" data-link="#about">About</li>
+        <li class="navbar__menu__itme" data-link="#skills">Skills</li>
+        <li class="navbar__menu__itme" data-link="#work">My work</li>
+        <li class="navbar__menu__itme" data-link="#testimonials">Testimonial</li>
+        <li class="navbar__menu__itme" data-link="#contact">Contact</li>
+      </ul>
+    </div>
+    <!-- toggle button-->
+    <button class="navbar__toggle-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!--Home-->
+  <section id="home">
+    <div class="home__contents">
+      <img 
+        src="images/profile.PNG" 
+        alt="sujeedo's profile photo" 
+        class="home__profile"
+      />
+      <h1 class="home__title">Hello,<br>I'm emotional illustrator.</h1>
+      <h2 class="home__description">
+        I created this site so you could see my paintings.<br>
+        I hope you like my painting.
+      </h2>
+      <button class="home__contact" data-link="#contact">Contact Me</button>
+    </div>
+  </section>
+
+  <!--About-->
+  <section id="about" class="section section__container">
+    <h2>About me</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et. Non tellus orci ac auctor augue. Elit at imperdiet dui accumsan sit.
+    </p>
+    <div class="about__majors">
+      <div class="major">
+        <div class="major__icon">
+          <i class="fas fa-palette"></i>
+          <!--<i class="fas fa-paint-brush"></i>-->
+        </div>
+        <h3 class="major__title">Illustration</h3>
+        <div class="major__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+      <div class="major">
+        <div class="major__icon">
+          <i class="fab fa-qq"></i>
+        </div>
+        <h3 class="major__title">Character</h3>
+        <div class="major__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+      <div class="major">
+        <div class="major__icon">
+          <i class="fas fa-book-open"></i>
+        </div>
+        <h3 class="major__title">Fairy Tale</h3>
+        <div class="major__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+      </div>
+    </div>
+    <div class="about__jobs">
+      <div class="job">
+        <img src="images/about-job-logo.png" alt="job-logo" width="30px" height="30px">
+        <div class="job__description">
+          <p class="job__name">Rom Musical Company Staff</p>
+          <p class="job__period">2015.10 ~ 2016.10</p>
+        </div>
+      </div>
+      <div class="job">
+        <img src="images/about-job-logo.png" alt="job-logo" width="30px" height="30px">
+        <div class="job__description">
+          <p class="job__name">Rom Musical Company Actor</p>
+          <p class="job__period">2016.10 ~ 2018.01</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Skills-->
+  <section id="skills" class="section" >
+    <div class="section__container">
+      <h2>Skills</h2>
+      <h3>Skills & Attributes</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Mi eget mauris pharetra et.</p>
+      <div class="skillset">
+        <div class="skillset__left">
+          <h3 class="skillset__title">Skills</h3>
+          <div class="skill">
+            <div class="skill__discription">
+              <span>Photoshop</span>
+              <span>80%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__discription">
+              <span>Illustrator</span>
+              <span>50%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value" style="width: 50%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__discription">
+              <span>InDesign</span>
+              <span>60%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value" style="width: 60%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__discription">
+              <span>Drawing</span>
+              <span>89%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value" style="width: 89%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="skillset__right">
+          <div class="tools">
+            <h3 class="skillset__title">Tools</h3>
+            <ul class="tools__list">
+              <li><span>PaintTool SAI</span></li>
+            </ul>
+          </div>
+          <div class="etc">
+            <h4 class="skillset__title">Etc</h4>
+            <ul class="etc__list">
+              <li><span>Blog</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Work-->
+  <section id="work" class="section section__container">
+    <h2>My work</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Quis hendrerit dolor magna eget est lorem ipsum dolor sit.
+    </p>
+    <div class="work__categories">
+      <button class="category__btn active" data-filter="*">All
+        <span class="category__count">8</span>
+      </button>
+      <button class="category__btn" data-filter="illust">Illust
+        <span class="category__count">3</span>
+      </button>
+      <button class="category__btn" data-filter="character">Character
+        <span class="category__count">2</span>
+      </button>
+      <button class="category__btn" data-filter="fairy-tale">Fairy tale
+        <span class="category__count">0</span>
+      </button>
+      <button class="category__btn" data-filter="caricature">Caricature
+        <span class="category__count">3</span>
+      </button>
+    </div>
+    <div class="work__projects">
+      <a 
+      href="#none" class="project" data-type="illust">
+      <img src="images/work/work-illust-1-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="illust">
+      <img src="images/work/work-illust-2-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="illust">
+      <img src="images/work/work-illust-3-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="character">
+      <img src="images/work/work-charater-1-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="character">
+      <img src="images/work/work-charater-2-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="caricature">
+      <img src="images/work/work-caricature-1-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="caricature">
+      <img src="images/work/work-caricature-2-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+      <a href="#none" class="project" data-type="caricature">
+      <img src="images/work/work-caricature-3-pre.png" alt="illust" class="project__image">
+      <div class="project__description">
+        <h3 class="project__title">Beatrice</h3>
+        <span class="project__content">
+          2020.03.15<br>
+          Photoshop CC Sketch & Painting<br>
+          art by. sujeeo<br>
+        </span>
+      </div>
+      </a>
+    </div>
+  </section>
+
+  <!--Testimonials-->
+  <section id="testimonials" class="section">
+    <div class="section__container">
+      <h2>testimonials</h2>
+      <h3>See what they say about me</h3>
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="images/profile.PNG" alt="testimonial-image" class="testimonial__avatar" />
+          <div class="testimonial_speech-bubble">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Nisl tincidunt eget nullam non.
+            </p>
+            <p class="name">
+              <span>sujeedo /</span>
+              <a href="#none"><i class="fab fa-twitter"></i></a>
+              <a href="#none"><i class="fab fa-pinterest"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial_speech-bubble">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non. Nisl tincidunt eget nullam non.
+            </p>
+            <p class="name">
+              <span>sujeedo /</span>
+              <a href="#none"><i class="fab fa-twitter"></i></a>
+              <a href="#none"><i class="fab fa-pinterest"></i></a>
+            </p>
+          </div>
+          <img src="images/profile.PNG" alt="testimonial-image" class="testimonial__avatar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Contact-->
+  <footer id="contact" class="section">
+    <h2 class="contact__title">let's talk</h2>
+    <h3 class="contact__email">sujeedoS2@gmail.com</h3>
+    <div class="contact__links">
+      <a href="#none">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="#none">
+        <i class="icon-200607_bolg-logo"></i>
+      </a>
+    </div>
+    <p class="contact__rights">
+      2020 sujeedo - All rights reserved
+    </p>
+  </footer>
+
+  <!-- Arrow-up-->
+  <button class="top">
+    <i class="fas fa-arrow-alt-circle-up" data-link="#home"></i>
+  </button>
+</body>
+</html>

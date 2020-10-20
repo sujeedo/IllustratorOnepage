@@ -191,14 +191,14 @@ p {
   background: linear-gradient(90deg, #ffdf86, #fe8d8d, #ffdf86, #fe8d8d);
   background-size: 400% 400%;
   color: var(--color-pink);
-  -webkit-animation: bgani 10s ease-in-out infinite;
-  -moz-animation: bgani 10s ease-in-out infinite; 
-  -o-animation: bgani 10s ease-in-out infinite; 
-  animation: bgani 10s ease-in-out infinite;
+  -webkit-animation: bgani 7s ease-in-out infinite;
+  -moz-animation: bgani 7s ease-in-out infinite; 
+  -o-animation: bgani 7s ease-in-out infinite; 
+  animation: bgani 7s ease-in-out infinite;
 }
 
-@keyframes bgani 
-{ 0%{background-position:0% 50%} 
+@keyframes bgani { 
+  0%{background-position:0% 50%} 
   50%{background-position:50% 50%} 
   100%{background-position:0% 50%}
 }
@@ -218,22 +218,51 @@ p {
   100%{background-position:0% 50%} 
 } 
 
-#home::after {
-  display: block;
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100vh;
-  background: url(../images/home_background.png) no-repeat center;
-  background-size: cover;
+.home__contents {
+  z-index: 1;
 }
 
 .home__profile {
   width: 250px; 
   height: 250px;
-  margin-top: 30px;
+  margin-top: 100px;
   border-radius: 50%;
   border: 2px solid white;
+  -webkit-animation: profilejump 2s ease-in-out infinite;
+  -moz-animation: profilejump 2s ease-in-out infinite; 
+  -o-animation: profilejump 2s ease-in-out infinite; 
+  animation: profilejump 2s ease-in-out infinite;
+}
+
+@keyframes profilejump { 
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
+}
+@-webkit-keyframes profilejump { 
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
+}
+@-moz-keyframes profilejump {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
+} 
+@-o-keyframes profilejump {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-10px);}
+  100% { transform: translateY(0px);}
+} 
+
+.home__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/home_background.png) no-repeat center;
+  background-size: cover;
 }
 
 .home__title, .home__description {

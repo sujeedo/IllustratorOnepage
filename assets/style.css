@@ -6,12 +6,12 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-pink: #fe918d;
-  --color-dark-pink: #fcd69e;
+  --color-pink: #fe8d8d;
+  --color-dark-pink: #ffdf86;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-blue: #73aace;
+  --color-blue: #51d6ff;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -181,19 +181,57 @@ p {
 /* Home */
 
 #home {
-  background-color: var(--color-dark-pink);
-  /*background: url('/images/home-background.png') center/cover no-repeat;*/
-  background-image: url('../images/home_background.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 70px 40px;
-  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%; 
+  height: 100vh; 
   text-align: center;
+  background: linear-gradient(90deg, #ffdf86, #fe8d8d, #ffdf86, #fe8d8d);
+  background-size: 400% 400%;
+  color: var(--color-pink);
+  -webkit-animation: bgani 10s ease-in-out infinite;
+  -moz-animation: bgani 10s ease-in-out infinite; 
+  -o-animation: bgani 10s ease-in-out infinite; 
+  animation: bgani 10s ease-in-out infinite;
+}
+
+@keyframes bgani 
+{ 0%{background-position:0% 50%} 
+  50%{background-position:50% 50%} 
+  100%{background-position:0% 50%}
+}
+@-webkit-keyframes bgani { 
+  0%{background-position:0% 50%} 
+  50%{background-position:50% 50%} 
+  100%{background-position:0% 50%} 
+}
+@-moz-keyframes bgani {
+  0%{background-position:0% 50%} 
+  50%{background-position:50% 50%} 
+  100%{background-position:0% 50%} 
+} 
+@-o-keyframes bgani {
+  0%{background-position:0% 50%} 
+  50%{background-position:50% 50%} 
+  100%{background-position:0% 50%} 
+} 
+
+#home::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100vh;
+  background: url(../images/home_background.png) no-repeat center;
+  background-size: cover;
 }
 
 .home__profile {
-  width: 250px; height: 250px;
+  width: 250px; 
+  height: 250px;
+  margin-top: 30px;
   border-radius: 50%;
   border: 2px solid white;
 }
@@ -214,7 +252,7 @@ p {
 }
 
 .home__contact:hover {
-  background-color: rgb(253, 206, 105);
+  background-color: var(--color-blue);
 }
 
 /* Section Common */
@@ -612,7 +650,7 @@ p {
   .navbar__menu.open {
     display: block;
   }
-
+  
   .about__majors {
     flex-direction: column;
   }

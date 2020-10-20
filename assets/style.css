@@ -301,6 +301,7 @@ p {
 } 
 
 .home__contents {
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -311,14 +312,19 @@ p {
   width: 100%; 
   height: 350px;
   margin: 50px 0 0 0;
+  animation: profile_visible 3.5s ease-in-out;
   perspective: 1000px;
+}
+
+@keyframes profile_visible {
+  75%{transform: scale(0)}
+  100%{transform: scale(1)}
 }
 
 .home__profile__box {
   position: relative;
   width: 200px; 
   height: 200px;
-  border: 2px solid white;
   animation: rotata3D 5s linear infinite;
   transform-style: preserve-3d;
 }
@@ -327,6 +333,7 @@ p {
   width: 200px; height: 200px;
   position: absolute;
   border: 2px solid white;
+  cursor: pointer;
 }
 
 @keyframes rotata3D {
@@ -370,7 +377,6 @@ p {
   transform: rotateX(270deg) translate3d(0px, 0px, 100px);
 }
 
-
 @keyframes profilejump { 
   0% { transform: translateY(0px);}
   50% { transform: translateY(-10px);}
@@ -407,8 +413,32 @@ p {
   margin-top: 20px;
 }
 
+.home__title {
+  animation: title_visible 3.8s ease-in-out;
+}
+
+@keyframes title_visible {
+  85%{transform: translateX(-100%); opacity: 0;}
+  100%{transform: translateX(0%); opacity: 1;}
+}
+
+.home__description {
+  animation: description_visible 4.1s ease-in-out;
+}
+
+@keyframes  description_visible {
+  90%{transform: translateX(100%); opacity: 0;}
+  100%{transform: translateX(0%); opacity: 1;}
+}
+
 .home__contact {
   margin-top: 30px;
+  animation: contact_visible 4.4s ease-in-out;
+}
+
+@keyframes  contact_visible {
+  95%{transform: translateY(100%); opacity: 0;}
+  100%{transform: translateY(0%); opacity: 1;}
 }
 
 .button_basic {

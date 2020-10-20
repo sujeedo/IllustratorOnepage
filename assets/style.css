@@ -304,17 +304,72 @@ p {
   z-index: 1;
 }
 
-.home__profile {
-  width: 250px; 
-  height: 250px;
-  margin-top: 100px;
-  border-radius: 50%;
-  border: 2px solid white;
-  -webkit-animation: profilejump 2s ease-in-out infinite;
-  -moz-animation: profilejump 2s ease-in-out infinite; 
-  -o-animation: profilejump 2s ease-in-out infinite; 
-  animation: profilejump 2s ease-in-out infinite;
+.home__profile__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+  height: 350px;
+  margin: 50px 0 0 0;
+  perspective: 1000px;
 }
+
+.home__profile__box {
+  position: relative;
+  width: 200px; 
+  height: 200px;
+  border: 2px solid white;
+  animation: rotata3D 5s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.home__profile__box div {
+  width: 200px; height: 200px;
+  position: absolute;
+  border: 2px solid white;
+}
+
+@keyframes rotata3D {
+  from{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  to{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+}
+
+.home__profile__box div:nth-child(1) {
+  background: url(../images/work/work-illust-1-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateY(0deg) translate3d(0px, 0px, 100px); /* 반지름125가운데 있는 사진들의 거리는 125px 용도 */
+}
+
+.home__profile__box div:nth-child(2) {
+  background: url(../images/work/work-illust-2-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateY(90deg) translate3d(0px, 0px, 100px);
+}
+
+.home__profile__box div:nth-child(3) {
+  background: url(../images/work/work-charater-2-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateY(180deg) translate3d(0px, 0px, 100px);
+}
+
+.home__profile__box div:nth-child(4) {
+  background: url(../images/work/work-caricature-3-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateY(270deg) translate3d(0px, 0px, 100px);
+}
+
+.home__profile__box div:nth-child(5) {
+  background: url(../images/work/work-charater-1-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateX(90deg) translate3d(0px, 0px, 100px);
+}
+
+.home__profile__box div:nth-child(6) {
+  background: url(../images/work/work-illust-3-pre.png) no-repeat;
+  background-size: contain;
+  transform: rotateX(270deg) translate3d(0px, 0px, 100px);
+}
+
 
 @keyframes profilejump { 
   0% { transform: translateY(0px);}
@@ -358,7 +413,7 @@ p {
 
 .button_basic {
   position: relative;
-  width: 180px;
+  width: 160px;
   height: 50px;
   text-align: center;
   color: var(--color-white);
@@ -380,7 +435,7 @@ p {
   text-align: center;
   width: 100%;
   height: 50px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid var(--color-white);
   border-radius: var(--size--border--radius);
 }

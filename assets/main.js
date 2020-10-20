@@ -1,5 +1,5 @@
 'use strict'
-
+ 
 // Make navbar transparent when il is on the top
 const navbar = document.querySelector('#navbar');
 const navtoggle = document.querySelector('.navbar__toggle-btn');
@@ -22,8 +22,18 @@ navbarMenu.addEventListener('click',function(event){
   if(link == null) {
     return;
   }
+  navbar.classList.remove('autoh')
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbar.classList.toggle('autoh')
+  navbarMenu.classList.toggle('open');
+});
+
 
 // handle click on "contact me" button on home
 const contactBtn = document.querySelector('.home__contact');
@@ -63,10 +73,17 @@ workBtnContainer.addEventListener('click', (e) => {
   if(filter == null) {
     return;
   }
+
+  // Remove selection from the previous item and select the new one
+  // 선택된 이전 아이템에서  선택된 것을 없애주고, 새로 클릭된 아이템을 선택합니다.
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+  target.classList.add('selected');
+
   projectContainer.classList.add('anim-out');
   setTimeout(() => {
     projects.forEach((project) => {
-      console.log(project.dataset.type);
       if(filter === '*' || filter === project.dataset.type){
         project.classList.remove('invisible');
       } else {

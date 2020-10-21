@@ -3,12 +3,16 @@
 // 로딩중 화면
 function loading() {
   const loadingdiv = document.querySelector('#loading');
-  loadingdiv.style.display = 'none'; // 로딩이 완료되면 로딩박스 제거
+  loadingdiv.classList.add('load');
+  setTimeout(function(){
+    loadingdiv.style.display = 'none';  // 로딩이 완료되면 로딩박스 제거
+  }, 1000);
   // document.all.style.display = 'block'; // 로딩이 완료되면 컨텐츠 표시
 }
-window.addEventListener('load', () => {
-  setTimeout(loading, 3000); // 로드 후 로딩함수 3초 후 호출
-});
+loading();
+// window.addEventListener('load', () => {
+//   setTimeout(loading, 3000); // 로드 후 로딩함수 3초 후 호출
+// });
  
 // Make navbar transparent when il is on the top
 const navbar = document.querySelector('#navbar');

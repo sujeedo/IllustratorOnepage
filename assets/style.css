@@ -317,12 +317,13 @@ p {
   width: 100%; 
   height: 350px;
   margin: 50px 0 0 0;
-  animation: profile_visible 3.5s ease-in-out;
+  animation: profile_visible 2s ease-in-out;
   perspective: 1000px;
 }
 
 @keyframes profile_visible {
-  75%{transform: scale(0)}
+  0%{transform: scale(0)}
+  40%{transform: scale(0)}
   100%{transform: scale(1)}
 }
 
@@ -334,16 +335,16 @@ p {
   transform-style: preserve-3d;
 }
 
+@keyframes rotata3D {
+  from{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+  to{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
+}
+
 .home__profile__box div {
   width: 200px; height: 200px;
   position: absolute;
   border: 2px solid white;
   cursor: pointer;
-}
-
-@keyframes rotata3D {
-  from{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
-  to{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);}
 }
 
 .home__profile__box div:nth-child(1) {
@@ -382,27 +383,6 @@ p {
   transform: rotateX(270deg) translate3d(0px, 0px, 100px);
 }
 
-@keyframes profilejump { 
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-10px);}
-  100% { transform: translateY(0px);}
-}
-@-webkit-keyframes profilejump { 
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-10px);}
-  100% { transform: translateY(0px);}
-}
-@-moz-keyframes profilejump {
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-10px);}
-  100% { transform: translateY(0px);}
-} 
-@-o-keyframes profilejump {
-  0% { transform: translateY(0px);}
-  50% { transform: translateY(-10px);}
-  100% { transform: translateY(0px);}
-} 
-
 .home__bg {
   position: absolute;
   top: 0;
@@ -419,31 +399,32 @@ p {
 }
 
 .home__title {
-  animation: title_visible 3.8s ease-in-out;
+  animation: title_visible 1.5s ease-in-out;
 }
 
 @keyframes title_visible {
-  85%{transform: translateX(-100%); opacity: 0;}
+  0%{transform: translateX(-100%); opacity: 0;}
   100%{transform: translateX(0%); opacity: 1;}
 }
 
 .home__description {
   font-size: var(--font-medium);
-  animation: description_visible 4.1s ease-in-out;
+  animation: description_visible 1.8s ease-in-out;
 }
 
 @keyframes  description_visible {
-  90%{transform: translateX(100%); opacity: 0;}
+  0%{transform: translateX(100%); opacity: 0;}
   100%{transform: translateX(0%); opacity: 1;}
 }
 
 .home__contact {
   margin-top: 10px;
-  animation: contact_visible 4.4s ease-in-out;
+  animation: contact_visible 1.5s ease-in-out;
 }
 
 @keyframes  contact_visible {
-  95%{transform: translateY(100%); opacity: 0;}
+  0%{transform: translateY(100%); opacity: 0;}
+  50%{transform: translateY(100%); opacity: 0;}
   100%{transform: translateY(0%); opacity: 1;}
 }
 

@@ -48,15 +48,18 @@ navbarToggleBtn.addEventListener('click', () => {
 // handle click on "contact me" button on home
 const contactBtn = document.querySelector('.home__contact');
 contactBtn.addEventListener('click',function(){
-  scrollIntoView('#contact');
+  scrollIntoView('#about');
 });
 
 
 // Make home slowly fade to transparent as the window scrolls down
 const home = document.querySelector('.home__contents');
 const homeHeight = home.getBoundingClientRect().height;
+console.log(homeHeight)
 document.addEventListener('scroll', () => { 
-  home.style.opacity = 1 - window.scrollY / homeHeight;
+  home.style.opacity = 1 - window.scrollY / (homeHeight);
+  console.log(window.scrollY)
+  console.log(window.scrollY / homeHeight)
 });
 
 // Show "arrow up" button when scroll down

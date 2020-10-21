@@ -59,13 +59,48 @@ document.addEventListener('scroll', () => {
   homeContents.style.opacity = 1 - window.scrollY / (homeHeight);
 });
 
-// Skill Section에 진입하면 Skill value Bar가 채워집니다.
+// Skill value Bar를 채우는 함수입니다.
 const skillSection = document.querySelector('#skills');
-const skillValues = document.querySelectorAll('.skill__value');
-for(let skillValue of skillValues) {
-  let skillValuedatas = skillValue.dataset.value;
-  skillValue.style.width = skillValuedatas;
+const skillsetBoxs = document.querySelectorAll('[data-boxname]');
+let skillValues = document.querySelectorAll('.skill__value');
+function skillValueBarPainting() {
+  for(let skillValue of skillValues) {
+    let skillValuedatas = skillValue.dataset.value;
+    skillValue.animate([
+      { width: '0%' },
+      { width: skillValuedatas }
+    ], 1000);
+    skillValue.style.width = skillValuedatas;
+  }
 }
+
+// 페이지 로드시 Skill value Bar가 채워집니다.
+setTimeout(() => {
+  skillValueBarPainting();
+}, 2700);
+
+// Skill value Bar에 마우스커서가 오버되면 Skill value Bar가 다시 채워집니다.
+for(let skillsetBox of skillsetBoxs) {
+  skillsetBox.addEventListener('mouseenter', (event) => {
+    let targetParents = event.target.childNodes
+    for(let targetParent of targetParents) {
+      let targets = targetParent.childNodes;
+      for(let targetchides of targets) {
+        let targetchide = targetchides.childNodes
+        for(let targetel of targetchide) {
+          if(targetel.nodeType === 1 && targetel.classList.value === 'skill__value') {
+            let skillValuedatas = targetel.dataset.value;
+            targetel.animate([
+              { width: '0%' },
+              { width: skillValuedatas }
+            ], 1000);
+          }
+        }
+      }
+    }
+  });
+}
+
 
 // Show "arrow up" button when scroll down
 const topBtn = document.querySelector('.top');

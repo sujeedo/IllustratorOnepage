@@ -649,6 +649,7 @@ p {
 #skills {
   background: url(../images/bg01.png) no-repeat center;
   background-size: cover;
+  background-attachment: fixed;
   padding: 0 50px;
 }
 

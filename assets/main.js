@@ -53,14 +53,19 @@ contactBtn.addEventListener('click',function(){
 
 
 // Make home slowly fade to transparent as the window scrolls down
-const home = document.querySelector('.home__contents');
+const homeContents = document.querySelector('.home__contents');
 const homeHeight = home.getBoundingClientRect().height;
-console.log(homeHeight)
 document.addEventListener('scroll', () => { 
-  home.style.opacity = 1 - window.scrollY / (homeHeight);
-  console.log(window.scrollY)
-  console.log(window.scrollY / homeHeight)
+  homeContents.style.opacity = 1 - window.scrollY / (homeHeight);
 });
+
+// Skill Section에 진입하면 Skill value Bar가 채워집니다.
+const skillSection = document.querySelector('#skills');
+const skillValues = document.querySelectorAll('.skill__value');
+for(let skillValue of skillValues) {
+  let skillValuedatas = skillValue.dataset.value;
+  skillValue.style.width = skillValuedatas;
+}
 
 // Show "arrow up" button when scroll down
 const topBtn = document.querySelector('.top');

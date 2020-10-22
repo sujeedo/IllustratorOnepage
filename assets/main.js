@@ -126,6 +126,8 @@ const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projectPreviews = document.querySelectorAll('.project_preview');
 const projects = document.querySelectorAll('.slide_box');
+let slideVisibleItmes = new Array();
+
 workBtnContainer.addEventListener('click', (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if(filter == null) {
@@ -152,12 +154,42 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 300);
   projects.forEach((project) => {
     if(filter === '*' || filter === project.dataset.type){
-      project.classList.remove('invisible');
-    } else {
-      project.classList.add('invisible');
+      //project.classList.remove('invisible');
+      console.log('if:'+project)
+      slideVisibleItmes = project;
+      console.log(slideVisibleItmes)
+      return slideVisibleItmes;
     }
+    // else {
+    //   //project.classList.add('invisible');
+    //   console.log('else:'+ project)
+    // }
   });
+  console.log(slideVisibleItmes)
 });
+//console.log(slideVisibleItme)
+
+// 썸네일 이미지를 클릭하여 모달창이 열리면 필터링된 요소들만 슬라이드할 수 있습니다.
+
+// 페이지 로드시 슬라이드 인덱스 값을 인자로 전달해 showSlide()함수를 호출합니다.
+var slideIndex = 1;
+showSlide(slideIndex);
+
+function showSlide(n) {
+  const slides = document.querySelectorAll('.slide_box');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+
 
 // 부드러운 스크롤링 함수
 function scrollIntoView(selecter) {

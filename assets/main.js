@@ -124,7 +124,8 @@ topBtn.addEventListener('click',() => {
 // poject
 const workBtnContainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
-const projects = document.querySelectorAll('.project');
+const projectPreviews = document.querySelectorAll('.project_preview');
+const projects = document.querySelectorAll('.slide_box');
 workBtnContainer.addEventListener('click', (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if(filter == null) {
@@ -140,17 +141,25 @@ workBtnContainer.addEventListener('click', (e) => {
 
   projectContainer.classList.add('anim-out');
   setTimeout(() => {
-    projects.forEach((project) => {
-      if(filter === '*' || filter === project.dataset.type){
-        project.classList.remove('invisible');
+    projectPreviews.forEach((projectPreview) => {
+      if(filter === '*' || filter === projectPreview.dataset.type){
+        projectPreview.classList.remove('invisible');
       } else {
-        project.classList.add('invisible');
+        projectPreview.classList.add('invisible');
       }
     });
     projectContainer.classList.remove('anim-out');
   }, 300);
+  projects.forEach((project) => {
+    if(filter === '*' || filter === project.dataset.type){
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  });
 });
 
+// 부드러운 스크롤링 함수
 function scrollIntoView(selecter) {
   const scrollTo = document.querySelector(selecter);
   scrollTo.scrollIntoView({behavior: 'smooth', block: 'center'});

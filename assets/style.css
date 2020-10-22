@@ -825,7 +825,7 @@ p {
 
 .project_preview.invisible,
 .slide_box.invisible {
-  display: none;
+  display: none !important;
 }
 
 .preview_img {
@@ -844,6 +844,11 @@ p {
   top: 0; left: 0;
   transform: translateY(10px);
   transition: all var(--animation-duration) ease-in;
+}
+
+.project__more i {
+  font-size: var(--font-large);
+  pointer-events: none;
 }
 
 .project_preview:hover .project__more{

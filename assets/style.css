@@ -91,7 +91,7 @@ h2 {
   font-size: var(--font-large);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 h3 {
@@ -353,42 +353,32 @@ p {
   width: 200px; height: 200px;
   position: absolute;
   border: 2px solid white;
+  background: url(../images/profile.png) no-repeat;
+  background-size: contain;
   cursor: pointer;
 }
 
 .home__profile__box div:nth-child(1) {
-  background: url(../images/work/work-illust-1-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateY(0deg) translate3d(0px, 0px, 100px); /* 반지름125가운데 있는 사진들의 거리는 125px 용도 */
 }
 
 .home__profile__box div:nth-child(2) {
-  background: url(../images/work/work-illust-2-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateY(90deg) translate3d(0px, 0px, 100px);
 }
 
 .home__profile__box div:nth-child(3) {
-  background: url(../images/work/work-charater-2-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateY(180deg) translate3d(0px, 0px, 100px);
 }
 
 .home__profile__box div:nth-child(4) {
-  background: url(../images/work/work-caricature-3-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateY(270deg) translate3d(0px, 0px, 100px);
 }
 
 .home__profile__box div:nth-child(5) {
-  background: url(../images/work/work-charater-1-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateX(90deg) translate3d(0px, 0px, 100px);
 }
 
 .home__profile__box div:nth-child(6) {
-  background: url(../images/work/work-illust-3-pre.png) no-repeat;
-  background-size: contain;
   transform: rotateX(270deg) translate3d(0px, 0px, 100px);
 }
 
@@ -569,7 +559,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
+  width: 400px;
 }
 
 .major__icon {
@@ -699,16 +689,16 @@ p {
 }
 
 .skillset__box:nth-of-type(1) {
-  background-color: rgba(255, 227, 136, 0.205);
+  background-color: rgba(255, 229, 144);
 }
 
 .skillset__box:nth-of-type(2) {
   margin: 0 20px;
-  background-color: rgba(136, 255, 219, 0.205);
+  background-color: rgb(118, 228, 186);
 }
 
 .skillset__box:nth-of-type(3) {
-  background-color: rgba(255, 158, 195, 0.205);
+  background-color: rgb(255, 158, 158);
 }
 
 .skillset__box:hover .skillset__title,
@@ -716,20 +706,8 @@ p {
   color: var(--color-light-grey);
 }
 
-.skillset__box:nth-of-type(1):hover {
-  background-color: rgb(255, 227, 136);
-}
-
-.skillset__box:nth-of-type(2):hover {
-  background-color: rgb(122, 228, 196);
-}
-
-.skillset__box:nth-of-type(3):hover {
-  background-color: rgb(255, 158, 166);
-}
-
 .skillset__title {
-  color: var(--color-white);
+  color: var(--color-grey);
   margin-bottom: 20px;
 }
 
@@ -742,7 +720,7 @@ p {
   justify-content: space-between;
   margin-bottom: 5px;
   font-size: var(--font-micro);
-  color: var(--color-white);
+  color: var(--color-light-grey);
 }
 
 .skill__bar {
@@ -817,10 +795,12 @@ p {
 }
 
 .project_preview {
-  width: 24%;
-  margin: 0 2px;
-  position: relative;
   overflow: hidden;
+  width: 257px;
+  height: 257px;
+  border-radius: 15px;
+  border: 4px solid var(--color-white);
+  position: relative;
 }
 
 .project_preview.invisible,
@@ -847,7 +827,7 @@ p {
 }
 
 .project__more i {
-  font-size: var(--font-large);
+  font-size: var(--font-medium);
   pointer-events: none;
 }
 
@@ -857,15 +837,15 @@ p {
 }
 
 .modal {
-  overflow: auto;
-  /* position: fixed; */
+  overflow: hidden;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 500px;
-  background-color: rgb(0, 0, 0);
+  height: 100%;
+  background-color: var(--color-black);
   z-index: 2;
-  /* display: none; */
+  display: none;
 }
 
 .modal_close_btn {
@@ -876,6 +856,7 @@ p {
   font-size: var(--font-medium);
   color: var(--color-white);
   z-index: 3;
+  text-shadow: 0px 0px 3px rgb(0, 0, 0), 0px 0px 3px rgb(0, 0, 0), 0px 0px 3px rgb(0, 0, 0);
 }
 
 .modal_content {
@@ -963,9 +944,14 @@ p {
   padding: 0px;
 }
 
+#testimonials h2 {
+  margin-bottom: 20px;
+}
+
 .testimonials {
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
 }
 
 .testimonial {
@@ -977,6 +963,8 @@ p {
 .testimonial__avatar {
   width: 150px; height: 150px;
   border-radius: 50%;
+  border: 4px solid var(--color-white);
+  box-shadow: 5px 5px 10px var(--color-dark-white);
 }
 
 .testimonial:nth-of-type(1) .testimonial__avatar {
@@ -988,12 +976,33 @@ p {
 }
 
 .testimonial_speech-bubble {
+  position: relative;
   padding: 18px;
   background-color: var(--color-white);
   border-radius: var(--size--border--radius);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 5px 5px 10px var(--color-dark-white);
+}
+
+.testimonial_speech-bubble::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  border: 15px solid;
+}
+
+.testimonial:nth-of-type(1) .testimonial_speech-bubble::after {
+  left: -30px;
+  border-color: transparent var(--color-white) transparent transparent;
+}
+
+.testimonial:nth-of-type(2) .testimonial_speech-bubble::after {
+  right: -30px;
+  border-color: transparent transparent transparent var(--color-white);
 }
 
 .testimonial_speech-bubble p {
@@ -1149,10 +1158,6 @@ p {
      display: none;
   }
 
-  .project_preview {
-    width: 48%;
-  }
-
 }
 
 /* Work slide */
@@ -1198,8 +1203,6 @@ p {
 /* Work image  */
 @media screen and (max-width: 600px) {
   .project_preview {
-    width: 100%; height: 300px;
-    margin: 5px 0;
     background-color: var(--color-light-white);
   }
 }
@@ -1238,10 +1241,26 @@ p {
 
   .testimonial:nth-of-type(1) .testimonial__avatar {
     margin-right: 0px;
+    margin-bottom: 30px;
   }
 
   .testimonial:nth-of-type(2) .testimonial__avatar {
     margin-left: 0px;
+    margin-bottom: 30px;
+  }
+
+  .testimonial:nth-of-type(1) .testimonial_speech-bubble::after {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: transparent transparent var(--color-white) transparent;
+  }
+  
+  .testimonial:nth-of-type(2) .testimonial_speech-bubble::after {
+    top: -30px;
+    right: 43%;
+    transform: translateX(-50%);
+    border-color: transparent transparent var(--color-white) transparent;
   }
 
   .contact__email {

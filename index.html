@@ -424,18 +424,27 @@
   
     <!--Contact-->
     <footer id="contact" class="section">
-      <h2 class="contact__title">let's talk</h2>
-      <h3 class="contact__email">sujeedoS2@gmail.com</h3>
+      <h2 class="contact__title">Contact Me!</h2>
+      <h3 class="contact__sub_title">If you have any questions or messages you want to send, please contact me.<br>
+        You do not need a name and email to send anonymous messages.</h3>
+      <form action="/action_page.php" class="contact_form">
+        <input type="text" id="fname" name="ftname" placeholder="Full Name" autocomplete="off">
+        <label for="fname"><span class="hidden_text">Full Name</span><i class="far fa-user"></i></label>
+        <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+        <label for="email"><span class="hidden_text">Email</span><i class="far fa-envelope"></i></label>
+        <textarea id="message" name="message" placeholder="Your Message" autocomplete="off" required></textarea>
+        <label for="message"><span class="hidden_text">Your Message</span><i class="far fa-comment"></i></label>
+        <button type="submit" class="button_basic roll">
+          <span>Send</span>
+          <span>Send</span>
+        </button>
+      </form>
       <div class="contact__links">
-        <a href="#none">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="#none">
-          <i class="icon-200607_bolg-logo"></i>
-        </a>
+        <a href="#none"><i class="fab fa-github"></i></a>
+        <a href="#none"><i class="icon-200607_bolg-logo"></i></a>
       </div>
       <p class="contact__rights">
-        2020 sujeedo - All rights reserved
+        Copyright 2020. sujeedo all rights reserved.
       </p>
     </footer>
   

@@ -701,11 +701,6 @@ p {
   background-color: rgb(255, 158, 158);
 }
 
-.skillset__box:hover .skillset__title,
-.skillset__box:hover .skill__discription {
-  color: var(--color-light-grey);
-}
-
 .skillset__title {
   color: var(--color-grey);
   margin-bottom: 20px;
@@ -761,13 +756,13 @@ p {
 
 .category__btn.selected .category__count, .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: -2px;
 }
 
 .category__count {
-  background-color: var(--color-orange);
+  background-color: var(--color-white);
   border-radius: 50%;
-  color: var(--color-white);
+  color: var(--color-orange);
   width: 16px; height: 16px;
   line-height: 14px;
   display: inline-block;
@@ -1028,11 +1023,20 @@ p {
 /* Contact */
 
 #contact {
-  background-color: var(--color-pink);
+  background: linear-gradient(90deg, #ffdf86, #fe8d8d, #ffdf86, #fe8d8d);
+  background-size: 400% 400%;
+  -webkit-animation: bgani 7s ease-in-out infinite;
+  -moz-animation: bgani 7s ease-in-out infinite; 
+  -o-animation: bgani 7s ease-in-out infinite; 
+  animation: bgani 7s ease-in-out infinite;
   position: relative;
 }
 
-.contact__title, .contact__email, .contact__rights {
+#contact.section {
+  padding-bottom: 30px;
+}
+
+.contact__title, .contact__sub_title, .contact__rights {
   color: white;
 }
 
@@ -1040,27 +1044,79 @@ p {
   margin: 32px 0;
 }
 
-.contact__links {
-  font-size: var(--font-large);
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 350px;
+  margin: 40px auto 0 auto;
+}
+
+.contact_form label {
+  position: absolute;
+  left: 22px;
+}
+
+.contact_form label:nth-child(2) {
+  top: 12px;
+}
+
+.contact_form label:nth-child(4) {
+  top: 69px;
+}
+
+.contact_form label:nth-child(6) {
+  top: 124px;
+}
+
+.contact_form label i{
+  font-size: var(--font-micro);
+}
+
+.contact_form input,
+.contact_form textarea {
+  padding: 15px 22px 15px 50px;
+  font-family: tahoma, Arial;
+  border: 0;
+}
+
+.contact_form input {
+  border-radius: 20px;
+}
+
+.contact_form textarea {
+  border-radius: 20px;
+  height: 150px;
+}
+
+.contact_form label,
+.contact_form input::placeholder,
+.contact_form textarea::placeholder {
+  color: var(--color-dark-white);
+}
+
+.contact_form input:nth-child(3) {
+  margin: 10px 0;
+}
+
+.contact_form input:focus+label,
+.contact_form textarea:focus+label {
+  color: var(--color-pink);
+}
+
+.contact_form button {
+  margin: 20px auto 10px auto;
+  cursor: pointer;
+}
+
+.contact__links i,
+.contact__links .icon-200607_bolg-logo {
+  font-size: var(--font-medium);
   margin: 24px 0;
 }
 
-.contact__links i:hover {
-  color: var(--color-black);
-  transform: scale(1.1);
-  transition: all var(--animation-duration) ease-in;
-}
-
-.contact__links .icon-200607_bolg-logo {
-  font-size: 45px;
-}
-
-.contact__links .icon-200607_bolg-logo:hover {
-  -moz-animation: scale 300ms ease-in;
-  -o-animation: scale 300ms ease-in;
-  -webkit-animation: scale 300ms ease-in;
-  animation: scale 300ms ease-in;
-  display: inline-block;
+.contact__rights {
+  font-size: var(--font-micro);
 }
 
 .top {
@@ -1078,22 +1134,6 @@ p {
 .top.visible {
   opacity: 1;
   pointer-events: auto;
-}
-
-@keyframes scale {
-  0% {
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  100% {
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
 }
 
 /* for below 768px screen width */

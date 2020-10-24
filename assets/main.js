@@ -63,6 +63,16 @@ document.addEventListener('scroll', () => {
   homeContents.style.opacity = 1 - window.scrollY / (homeHeight);
 });
 
+// About섹션의 이미지를 클릭하면 뒷면을 보여줍니다.
+const aboutImgs = document.querySelectorAll('.major__icon');
+for(let aboutImg of aboutImgs) {
+  aboutImg.addEventListener('click', () => {
+    aboutImg.classList.toggle('clickfront') 
+    aboutImg.classList.toggle('clickback')
+    console.log(aboutImg)
+  });
+}
+
 // Skill value Bar를 채우는 함수입니다.
 const skillSection = document.querySelector('#skills');
 const skillsetBoxs = document.querySelectorAll('[data-boxname]');
@@ -104,7 +114,6 @@ for(let skillsetBox of skillsetBoxs) {
     }
   });
 }
-
 
 // Show "arrow up" button when scroll down
 const topBtn = document.querySelector('.top');

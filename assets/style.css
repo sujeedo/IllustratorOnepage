@@ -1044,6 +1044,12 @@ p {
   margin: 32px 0;
 }
 
+.contact__sub_title {
+  max-width: 1130px;
+  margin: auto;
+  padding: 0 50px;
+}
+
 .contact_form {
   display: flex;
   flex-direction: column;
@@ -1077,7 +1083,8 @@ p {
 .contact_form textarea {
   padding: 15px 22px 15px 50px;
   font-family: tahoma, Arial;
-  border: 0;
+  border: none;
+  outline: none;
 }
 
 .contact_form input {
@@ -1117,6 +1124,11 @@ p {
 
 .contact__rights {
   font-size: var(--font-micro);
+}
+
+.thankyou_message h2 {
+  font-size: var(--font-medium);
+  color: var(--color-white);
 }
 
 .top {

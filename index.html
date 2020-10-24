@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/style.css"> <!--CSS 파일 연동-->
   <script src="assets/main.js" defer></script> <!--defer : html파일이 모두 로딩된 후 자바스크립트를 실행하도록 해줍니다.-->
   <script src="assets/work.js" defer></script>
+  <script src="assets/form-submission-handler.js" data-cfasync="false" defer></script>
 </head>
 <body>
 
@@ -425,19 +426,32 @@
     <!--Contact-->
     <footer id="contact" class="section">
       <h2 class="contact__title">Contact Me!</h2>
-      <h3 class="contact__sub_title">If you have any questions or messages you want to send, please contact me.<br>
-        You do not need a name and email to send anonymous messages.</h3>
-      <form action="/action_page.php" class="contact_form">
-        <input type="text" id="fname" name="ftname" placeholder="Full Name" autocomplete="off">
-        <label for="fname"><span class="hidden_text">Full Name</span><i class="far fa-user"></i></label>
-        <input type="email" id="email" name="email" placeholder="Email" autocomplete="off">
+      <p class="contact__sub_title">I implemented a function to receive mail using Google email api.
+        If you have any questions or messages you want to send, please contact me.
+        You do not need a name and email to send anonymous messages.</p>
+
+      <form class="contact_form gform" method="POST"
+        action="https://script.google.com/macros/s/AKfycbxYFypDC32yvhIcXx4HCjkI5uOzNQe99LQn53TYVxvL78KhYow/exec">
+    
+        <input type="text" id="name" name="name" placeholder="Full Name" autocomplete="off">
+        <label for="name"><span class="hidden_text">Full Name</span><i class="far fa-user"></i></label>
+    
+        <input type="text" id="email" name="email" placeholder="Email" autocomplete="off">
         <label for="email"><span class="hidden_text">Email</span><i class="far fa-envelope"></i></label>
+    
         <textarea id="message" name="message" placeholder="Your Message" autocomplete="off" required></textarea>
         <label for="message"><span class="hidden_text">Your Message</span><i class="far fa-comment"></i></label>
-        <button type="submit" class="button_basic roll">
+    
+        <button class="contact_btn button_basic roll">
           <span>Send</span>
           <span>Send</span>
         </button>
+
+        <div class="thankyou_message" style="display:none">
+          <!-- You can customize the thankyou message by editing the code below -->
+          <h2>Thank you for contacting me!</h2>
+        </div>
+    
       </form>
       <div class="contact__links">
         <a href="#none"><i class="fab fa-github"></i></a>

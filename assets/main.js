@@ -36,7 +36,7 @@ navbarMenu.addEventListener('click',function(event){
   if(link == null) {
     return;
   }
-  navbar.classList.remove('autoh')
+  navbar.classList.remove('autoh');
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });

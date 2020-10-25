@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sujeedo's portfolio site</title> <!--메타정보는 이름과 컨텐을 이용해 다양한 정보를 담을 수 있습니다.-->
+  <title>sujeedo main</title> <!--메타정보는 이름과 컨텐을 이용해 다양한 정보를 담을 수 있습니다.-->
   <meta name="description" content="portfolio"> <!--description 웹 사이트 설명-->
   <meta name="author" content="sujeedo"> <!--author 웹 사이트 저작자 설명-->
   <link rel="icon" type="image/png" href="images/favicon.png"> <!--웹사이트 대표 로고 지정-->
@@ -26,26 +26,26 @@
 
   <div class="over__container">
     <!--Navbar-->
-    <nav id="navbar">
+    <header id="navbar">
       <div class="navbar__logo">
         <i class="fab fa-fort-awesome-alt"></i>
         <a href="#">sujeedo</a>
       </div>
-      <div class="navbar__menu__container">
+      <nav class="navbar__menu__container">
         <ul class="navbar__menu">
-          <li class="navbar__menu__itme active" data-link="#home">Home</li>
-          <li class="navbar__menu__itme" data-link="#about">About</li>
-          <li class="navbar__menu__itme" data-link="#skills">Skills</li>
-          <li class="navbar__menu__itme" data-link="#work">My work</li>
-          <li class="navbar__menu__itme" data-link="#testimonials">Testimonial</li>
-          <li class="navbar__menu__itme" data-link="#contact">Contact</li>
+          <li class="button_basic roll"><span data-link="#home">Home</span><span aria-hidden="true">Home</span></li>
+          <li class="button_basic roll"><span data-link="#about">About</span><span aria-hidden="true">About</span></li>
+          <li class="button_basic roll"><span data-link="#skills">Skills</span><span aria-hidden="true">Skills</span></li>
+          <li class="button_basic roll"><span data-link="#work">My work</span><span aria-hidden="true">My work</span></li>
+          <li class="button_basic roll"><span data-link="#testimonials">Testimonial</span><span aria-hidden="true">Testimonial</span></li>
+          <li class="button_basic roll"><span data-link="#contact">Contact</span><span aria-hidden="true">Contact</span></li>
         </ul>
-      </div>
+      </nav>
       <!-- toggle button-->
       <button class="navbar__toggle-btn">
         <i class="fas fa-bars"></i>
       </button>
-    </nav>
+    </header>
   
     <!--Home-->
     <section id="home">

@@ -48,6 +48,21 @@ navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
+// 360도 회전하는 프로필 이미지 클릭하여 이미지 변경하기
+const homeProfileBox = document.querySelector('.home__profile__box');
+const homeProfileImgs = document.querySelectorAll('.home__profile__box div');
+let x = 0;
+homeProfileBox.addEventListener('click', () => {
+  //const x = [0,1,2];
+  //let y = x[Math.floor(Math.random()*3)];
+  x++;
+  if(x > 2) {
+    x = 0;
+  }
+  for(let homeProfileImg of homeProfileImgs) {
+    homeProfileImg.style.backgroundImage = `url(images/profile${x}.png)`;
+  }
+});
 
 // handle click on "contact me" button on home
 const contactBtn = document.querySelector('.home__contact');
@@ -57,11 +72,49 @@ contactBtn.addEventListener('click',function(){
 
 
 // Make home slowly fade to transparent as the window scrolls down
-const homeContents = document.querySelector('.home__contents');
-const homeHeight = home.getBoundingClientRect().height;
-document.addEventListener('scroll', () => { 
-  homeContents.style.opacity = 1 - window.scrollY / (homeHeight);
-});
+// const homeContents = document.querySelector('.home__contents');
+// const homeHeight = home.getBoundingClientRect().height;
+// const aboutContents = document.querySelector('.about_contants');
+// const aboutTop =  about.getBoundingClientRect().top + window.pageYOffset;
+// const aboutHeight = about.getBoundingClientRect().height;
+// const skillContents = skills.querySelector('.section__container');
+// const skillTop =  skills.getBoundingClientRect().top + window.pageYOffset;
+// const skillHeight = skills.getBoundingClientRect().height;
+// const workContents = work.querySelector('.work_contents');
+// const workTop =  work.getBoundingClientRect().top + window.pageYOffset;
+// const workHeight = work.getBoundingClientRect().height;
+// const testimonialContents = testimonials.querySelector('.section__container');
+// const testimonialTop =  testimonials.getBoundingClientRect().top + window.pageYOffset;
+// const testimonialHeight = testimonials.getBoundingClientRect().height;
+// const contactTop =  contact.getBoundingClientRect().top + window.pageYOffset;
+// const contactHeight = contact.getBoundingClientRect().height;
+// window.addEventListener('scroll', (event) => {
+//   if(window.scrollY > homeHeight/2) {
+//     homeContents.style.opacity = 1 - ((window.scrollY-(homeHeight/2))/(homeHeight/2));
+//     //aboutContents.style.opacity = 0 + ((window.scrollY*2+(skillTop-(aboutTop+(aboutHeight/2)))-(aboutTop+(aboutHeight/2)))/(skillTop-(aboutTop+(aboutHeight/2))));
+//   }
+//   if(window.scrollY > aboutTop+(aboutHeight/2)) {
+//     aboutContents.style.opacity = 1 - ((window.scrollY-(aboutTop+(aboutHeight/2)))/(skillTop-(aboutTop+(aboutHeight/2))));
+//   }
+//   if(window.scrollY > skillTop+(skillHeight/2)) {
+//     skillContents.style.opacity = 1 - ((window.scrollY-(skillTop+(skillHeight/2)))/(workTop-(skillTop+(skillHeight/2))));
+//   }
+//   if(window.scrollY > workTop+(workHeight/2)) {
+//     workContents.style.opacity = 1 - ((window.scrollY-(workTop+(workHeight/2)))/(testimonialTop-(workTop+(workHeight/2))));
+//   }
+// });
+// console.log(homeHeight)
+// console.log(aboutTop)
+// console.log(skillTop)
+// console.log(workTop)
+// console.log(testimonialTop)
+// console.log(contactTop)
+// console.log(aboutHeight)
+// console.log(skillHeight)
+// console.log(workHeight)
+// console.log(testimonialHeight)
+// console.log(contactHeight)
+// console.log('--')
 
 // About섹션의 이미지를 클릭하면 뒷면을 보여줍니다.
 const aboutImgs = document.querySelectorAll('.major__icon');
@@ -69,7 +122,6 @@ for(let aboutImg of aboutImgs) {
   aboutImg.addEventListener('click', () => {
     aboutImg.classList.toggle('clickfront') 
     aboutImg.classList.toggle('clickback')
-    console.log(aboutImg)
   });
 }
 

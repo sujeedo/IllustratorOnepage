@@ -446,7 +446,7 @@ p {
   width: 200px; height: 200px;
   position: absolute;
   border: 2px solid white;
-  background: url(../images/profile.PNG) no-repeat;
+  background: url(../images/profile0.png) no-repeat;
   background-size: contain;
   cursor: pointer;
 }

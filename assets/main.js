@@ -73,7 +73,7 @@ contactBtn.addEventListener('click',function(){
 
 // Make home slowly fade to transparent as the window scrolls down
 // const homeContents = document.querySelector('.home__contents');
-// const homeHeight = home.getBoundingClientRect().height;
+const homeHeight = home.getBoundingClientRect().height;
 // const aboutContents = document.querySelector('.about_contants');
 // const aboutTop =  about.getBoundingClientRect().top + window.pageYOffset;
 // const aboutHeight = about.getBoundingClientRect().height;
@@ -103,6 +103,7 @@ contactBtn.addEventListener('click',function(){
 //     workContents.style.opacity = 1 - ((window.scrollY-(workTop+(workHeight/2)))/(testimonialTop-(workTop+(workHeight/2))));
 //   }
 // });
+
 // console.log(homeHeight)
 // console.log(aboutTop)
 // console.log(skillTop)

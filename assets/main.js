@@ -13,7 +13,7 @@ loading();
 // window.addEventListener('load', () => {
 //   setTimeout(loading, 3000); // 로드 후 로딩함수 3초 후 호출
 // });
- 
+
 // Make navbar transparent when il is on the top
 const navbar = document.querySelector('#navbar');
 const navtoggle = document.querySelector('.navbar__toggle-btn');
@@ -39,6 +39,7 @@ navbarMenu.addEventListener('click',function(event){
   navbar.classList.remove('autoh');
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
+  selectNavItem(target);
 });
 
 // Navbar toggle button for small screen
@@ -68,6 +69,7 @@ homeProfileBox.addEventListener('click', () => {
 const contactBtn = document.querySelector('.home__contact');
 contactBtn.addEventListener('click',function(){
   scrollIntoView('#about');
+  selectNavItem(navItems[1]);
 });
 
 
@@ -183,8 +185,71 @@ topBtn.addEventListener('click',() => {
   scrollIntoView('#home');
 });
 
+
+/* 스크롤시 메뉴 활성화하기 */
+
+// 1. 모든 섹션 요소들과 메뉴 아이템을 배열로 가져옵니다.
+// 2. intersectionObserver를 이용하여 모든 섹션의 진출입을 관찰합니다.
+// 3. 섹션 진출입시 해당 메뉴를 활성화 비활성화 합니다.
+
+// 섹션 아이디를 배열로 만듭니다.
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#work',
+  '#testimonials',
+  '#contact'
+];
+// 가져온 아이디 배열은 문자열이므로 map() 메서드를 이용하여 새로운 섹션 배열과 메뉴 배열을 생성합니다.
+// map() 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 새로운 배열을 반환합니다.
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.classList.add('active');
+}
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.4,
+}
+
+const observerCallback = (entries, observer) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if(entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }  
+    }
+  });
+}
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  // 만약에 윈도우의 scrollY가 0 이라면 (제일 위에 있다면)
+  if(window.scrollY === 0) {
+    selectedNavIndex = 0;
+  // 만약에 윈도우의 scrollY 포지션과 윈도우의 innerHinght를 더한 값과 body의 높이가 동일하다면 (제일 밑에 있다면)
+  } else if(Math.round(window.scrollY + window.innerHeight) >= document.body.clientHeight) {
+    selectedNavIndex = navItems.length -1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
+
 // 부드러운 스크롤링 함수
 function scrollIntoView(selecter) {
   const scrollTo = document.querySelector(selecter);
   scrollTo.scrollIntoView({behavior: 'smooth', block: 'center'});
+  selectNavItem(navItems[sectionIds.indexOf(selecter)]);
 }
